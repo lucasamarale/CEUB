@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 44 44" role="img" aria-label="William Arena">
+  <defs>
+    <linearGradient id="wa-g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#22E0F0"/>
+      <stop offset="1" stop-color="#7C4DFF"/>
+    </linearGradient>
+  </defs>
+  <rect x="1" y="1" width="42" height="42" fill="#0E1120" stroke="#232842"/>
+  <path d="M1 1h11M1 1v11" stroke="#22E0F0" stroke-width="2" fill="none"/>
+  <path d="M43 43H32M43 43V32" stroke="#7C4DFF" stroke-width="2" fill="none"/>
+  <path d="M9 12l4.5 15L18 16.5 22.5 27 27 12" fill="none" stroke="url(#wa-g)" stroke-width="2.6"
+        stroke-linecap="square" stroke-linejoin="miter"/>
+  <path d="M27 32l4-12 4 12M28.7 28h4.6" fill="none" stroke="#EEF1FF" stroke-width="2.2"
+        stroke-linecap="square"/>
+</svg>

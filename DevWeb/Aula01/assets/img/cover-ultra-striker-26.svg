@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 270" role="img"
+     aria-label="Arte de capa de Ultra Striker 26: um campo de futebol estilizado visto de cima">
+  <defs>
+    <linearGradient id="us-bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#12162A"/><stop offset="1" stop-color="#0B0E1A"/>
+    </linearGradient>
+    <linearGradient id="us-ball" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#22E0F0"/><stop offset="1" stop-color="#7C4DFF"/>
+    </linearGradient>
+  </defs>
+  <rect width="480" height="270" fill="url(#us-bg)"/>
+  <g opacity=".16" fill="#7C4DFF">
+    <rect x="0" y="0" width="60" height="270"/><rect x="120" y="0" width="60" height="270"/>
+    <rect x="240" y="0" width="60" height="270"/><rect x="360" y="0" width="60" height="270"/>
+  </g>
+  <g stroke="#A78BFF" stroke-width="2" fill="none" opacity=".9">
+    <rect x="26" y="26" width="428" height="218"/>
+    <path d="M240 26v218"/>
+    <circle cx="240" cy="135" r="52"/>
+    <rect x="26" y="80" width="58" height="110"/>
+    <rect x="396" y="80" width="58" height="110"/>
+    <rect x="26" y="112" width="24" height="46"/>
+    <rect x="430" y="112" width="24" height="46"/>
+  </g>
+  <circle cx="240" cy="135" r="26" fill="url(#us-ball)"/>
+  <g fill="#0B0E1A">
+    <path d="M240 118l9 6-3 10h-12l-3-10z"/>
+    <path d="M226 144l7 9-5 6-9-6zM254 144l-7 9 5 6 9-6z"/>
+  </g>
+  <g stroke="#22E0F0" stroke-width="2" fill="none" stroke-dasharray="6 6" opacity=".8">
+    <path d="M84 200c60 26 150 20 200-32"/>
+  </g>
+  <path d="M0 0h22M0 0v22" stroke="#22E0F0" stroke-width="3" fill="none"/>
+  <path d="M480 270h-22M480 270v-22" stroke="#7C4DFF" stroke-width="3" fill="none"/>
+</svg>

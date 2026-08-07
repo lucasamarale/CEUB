@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 270" role="img"
+     aria-label="Arte de capa de Vale dos Reis: montanhas em silhueta sob um sol nascente">
+  <defs>
+    <linearGradient id="vr-sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#1A1638"/><stop offset="1" stop-color="#0B0E1A"/>
+    </linearGradient>
+    <linearGradient id="vr-sun" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#22E0F0"/><stop offset="1" stop-color="#7C4DFF"/>
+    </linearGradient>
+  </defs>
+  <rect width="480" height="270" fill="url(#vr-sky)"/>
+  <circle cx="240" cy="132" r="66" fill="url(#vr-sun)" opacity=".9"/>
+  <g fill="#0B0E1A" opacity=".55">
+    <rect x="174" y="112" width="132" height="4"/><rect x="174" y="126" width="132" height="4"/>
+    <rect x="174" y="140" width="132" height="4"/><rect x="174" y="154" width="132" height="4"/>
+  </g>
+  <path d="M0 200l70-72 42 44 54-58 60 66 46-40 68 74 62-46 78 62v40H0z" fill="#12162A"/>
+  <path d="M0 214l88-56 56 42 62-34 58 48 62-40 72 52 82-46v90H0z" fill="#0E1120"/>
+  <path d="M0 246l96-26 74 18 82-22 84 24 70-18 74 20v28H0z" fill="#080A14"/>
+  <g stroke="#A78BFF" stroke-width="1.2" fill="none" opacity=".7">
+    <path d="M70 128l14 12-14 12-14-12z"/><path d="M356 154l12 10-12 10-12-10z"/>
+  </g>
+  <g fill="#22E0F0" opacity=".85">
+    <rect x="118" y="70" width="3" height="3"/><rect x="330" y="52" width="3" height="3"/>
+    <rect x="404" y="96" width="3" height="3"/><rect x="52" y="44" width="3" height="3"/>
+  </g>
+  <path d="M0 0h22M0 0v22" stroke="#22E0F0" stroke-width="3" fill="none"/>
+  <path d="M480 270h-22M480 270v-22" stroke="#7C4DFF" stroke-width="3" fill="none"/>
+</svg>

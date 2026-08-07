@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 270" role="img"
+     aria-label="Arte de capa de Eclipse Protocol: um eclipse sobre uma grade tática">
+  <defs>
+    <linearGradient id="ep-sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#150F30"/><stop offset="1" stop-color="#0B0E1A"/>
+    </linearGradient>
+    <radialGradient id="ep-halo" cx="50%" cy="42%" r="42%">
+      <stop offset="0" stop-color="#7C4DFF" stop-opacity=".85"/>
+      <stop offset="1" stop-color="#7C4DFF" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="ep-ring" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#22E0F0"/><stop offset="1" stop-color="#A78BFF"/>
+    </linearGradient>
+  </defs>
+  <rect width="480" height="270" fill="url(#ep-sky)"/>
+  <g stroke="#232842" stroke-width="1" opacity=".65">
+    <path d="M0 200h480M0 224h480M0 248h480"/>
+    <path d="M60 190v80M140 190v80M220 190v80M300 190v80M380 190v80"/>
+  </g>
+  <circle cx="240" cy="114" r="110" fill="url(#ep-halo)"/>
+  <circle cx="240" cy="114" r="56" fill="none" stroke="url(#ep-ring)" stroke-width="3"/>
+  <circle cx="240" cy="114" r="46" fill="#0B0E1A"/>
+  <circle cx="240" cy="114" r="72" fill="none" stroke="#7C4DFF" stroke-width="1" opacity=".55"/>
+  <g fill="none" stroke="#22E0F0" stroke-width="2">
+    <path d="M240 30v-14M240 212v14M156 114h-14M338 114h14"/>
+  </g>
+  <g fill="#EEF1FF" opacity=".9">
+    <rect x="150" y="196" width="10" height="10"/><rect x="322" y="212" width="8" height="8"/>
+    <rect x="86" y="228" width="6" height="6"/>
+  </g>
+  <g fill="none" stroke="#A78BFF" stroke-width="1.4" opacity=".8">
+    <path d="M155 201l85 27 82-16"/>
+  </g>
+  <path d="M0 0h22M0 0v22" stroke="#22E0F0" stroke-width="3" fill="none"/>
+  <path d="M480 270h-22M480 270v-22" stroke="#7C4DFF" stroke-width="3" fill="none"/>
+</svg>

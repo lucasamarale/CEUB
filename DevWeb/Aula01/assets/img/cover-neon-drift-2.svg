@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 270" role="img"
+     aria-label="Arte de capa de Neon Drift 2: uma pista em perspectiva com linhas de neon">
+  <defs>
+    <linearGradient id="nd-sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#241854"/><stop offset="1" stop-color="#0B0E1A"/>
+    </linearGradient>
+    <linearGradient id="nd-road" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#7C4DFF" stop-opacity=".35"/>
+      <stop offset="1" stop-color="#22E0F0" stop-opacity=".12"/>
+    </linearGradient>
+  </defs>
+  <rect width="480" height="270" fill="url(#nd-sky)"/>
+  <circle cx="240" cy="120" r="52" fill="#7C4DFF" opacity=".5"/>
+  <g stroke="#0B0E1A" stroke-width="5">
+    <path d="M180 104h120M180 118h120M180 132h120M180 146h120"/>
+  </g>
+  <path d="M240 120L36 270h408z" fill="url(#nd-road)"/>
+  <g stroke="#22E0F0" stroke-width="2.4" fill="none">
+    <path d="M240 120L36 270"/><path d="M240 120l204 150"/>
+  </g>
+  <g stroke="#EEF1FF" stroke-width="3" fill="none" opacity=".9">
+    <path d="M240 134v10M240 156v16M240 186v24M240 224v40"/>
+  </g>
+  <g stroke="#A78BFF" stroke-width="1.2" fill="none" opacity=".55">
+    <path d="M112 270h256M84 250h312M148 232h184M172 214h136"/>
+  </g>
+  <g fill="#22E0F0">
+    <rect x="52" y="150" width="4" height="46"/><rect x="424" y="150" width="4" height="46"/>
+  </g>
+  <path d="M0 0h22M0 0v22" stroke="#22E0F0" stroke-width="3" fill="none"/>
+  <path d="M480 270h-22M480 270v-22" stroke="#7C4DFF" stroke-width="3" fill="none"/>
+</svg>
