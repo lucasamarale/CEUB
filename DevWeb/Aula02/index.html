@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<title>Escola Virtual</title>
+</head>
+
+<!--
+  Atividade prática — Prof. William Ribeiro
+  Formulário de Pré-Matrícula montado SOMENTE com HTML.
+  Sem folha de estilo e sem atributo style: todo o alinhamento é feito com
+  elementos e atributos do próprio HTML (table, fieldset, align, size, center).
+-->
+
+<body>
+
+<center>
+  <h1>Escola Virtual</h1>
+  <h2>Formulário de Pré-Matrícula</h2>
+</center>
+
+<hr>
+
+<form action="#" method="post">
+
+  <!-- ============================ DADOS PESSOAIS ============================ -->
+  <fieldset>
+    <legend><b>Dados Pessoais:</b></legend>
+
+    <table border="0" cellspacing="4" cellpadding="2">
+
+      <tr>
+        <td align="right"><label for="aluno">Nome do Aluno:</label></td>
+        <td><input type="text" id="aluno" name="aluno" size="50"></td>
+      </tr>
+
+      <tr>
+        <td align="right"><label for="dia">Nascimento (dd/mm/aaaa):</label></td>
+        <td>
+          <input type="text" id="dia" name="dia" size="2" maxlength="2"> /
+          <input type="text" id="mes" name="mes" size="2" maxlength="2"> /
+          <input type="text" id="ano" name="ano" size="4" maxlength="4">
+        </td>
+      </tr>
+
+      <tr>
+        <td align="right"><label for="mae">Nome da M&atilde;e:</label></td>
+        <td><input type="text" id="mae" name="mae" size="50"></td>
+      </tr>
+
+      <tr>
+        <td align="right"><label for="pai">Nome do Pai:</label></td>
+        <td><input type="text" id="pai" name="pai" size="50"></td>
+      </tr>
+
+      <tr>
+        <td align="right"><label for="ddd">Telefone: DDD</label></td>
+        <td>
+          (<input type="text" id="ddd" name="ddd" size="3" maxlength="3">)
+          <label for="tel">Tel:</label>
+          <input type="text" id="tel" name="tel" size="15">
+          <label for="ramal">Ramal:</label>
+          <input type="text" id="ramal" name="ramal" size="8">
+        </td>
+      </tr>
+
+      <tr>
+        <td align="right"><label for="email">E-Mail:</label></td>
+        <td><input type="text" id="email" name="email" size="50"></td>
+      </tr>
+
+    </table>
+  </fieldset>
+
+  <!-- ======================= INFORMA&Ccedil;&Otilde;ES DE MATR&Iacute;CULA ======================= -->
+  <fieldset>
+    <legend><b>Informa&ccedil;&otilde;es de Matricula:</b></legend>
+
+    <table border="0" cellspacing="4" cellpadding="2" width="100%">
+      <tr valign="top">
+
+        <!-- coluna 1: s&eacute;rie -->
+        <td>
+          <b><label for="serie">S&eacute;rie:</label></b><br>
+          <select id="serie" name="serie">
+            <option selected>pr&eacute;-escolar</option>
+            <option>1&ordf; s&eacute;rie</option>
+            <option>2&ordf; s&eacute;rie</option>
+            <option>3&ordf; s&eacute;rie</option>
+            <option>4&ordf; s&eacute;rie</option>
+            <option>5&ordf; s&eacute;rie</option>
+            <option>6&ordf; s&eacute;rie</option>
+            <option>7&ordf; s&eacute;rie</option>
+            <option>8&ordf; s&eacute;rie</option>
+          </select>
+        </td>
+
+        <!-- coluna 2: turno -->
+        <td>
+          <b>Turno:</b><br>
+          <input type="radio" id="manha" name="turno" value="manha">
+          <label for="manha">Manh&atilde;</label><br>
+          <input type="radio" id="tarde" name="turno" value="tarde">
+          <label for="tarde">Tarde</label>
+        </td>
+
+        <!-- coluna 3: atividades extracurriculares -->
+        <td>
+          <b>Atividades Extracurriculares:</b><br>
+          <input type="checkbox" id="informatica" name="atividades" value="informatica">
+          <label for="informatica">Inform&aacute;tica</label><br>
+          <input type="checkbox" id="musica" name="atividades" value="musica">
+          <label for="musica">M&uacute;sica</label><br>
+          <input type="checkbox" id="bale" name="atividades" value="bale">
+          <label for="bale">Bal&eacute;</label><br>
+          <input type="checkbox" id="pintura" name="atividades" value="pintura">
+          <label for="pintura">Pintura</label><br>
+          <input type="checkbox" id="judo" name="atividades" value="judo">
+          <label for="judo">Jud&ocirc;</label><br>
+          <input type="checkbox" id="futebol" name="atividades" value="futebol">
+          <label for="futebol">Futebol</label>
+        </td>
+
+      </tr>
+    </table>
+  </fieldset>
+
+  <!-- ============================== BOT&Otilde;ES ============================== -->
+  <center>
+    <p>
+      <input type="submit" value="Envia Formul&aacute;rio">
+      <input type="reset" value="Limpa Campos">
+    </p>
+  </center>
+
+</form>
+
+</body>
+</html>

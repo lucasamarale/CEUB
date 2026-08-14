@@ -11,7 +11,8 @@ O repositório é organizado por disciplina, e cada disciplina por aula ou entre
 ```
 CEUB/
 └── DevWeb/          Desenvolvimento Web — 4º semestre (2026.2)
-    └── Aula01/      Site William Arena
+    ├── Aula01/      Site William Arena
+    └── Aula02/      Formulário Escola Virtual (somente HTML)
 ```
 
 ## Disciplinas
