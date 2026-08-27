@@ -1,0 +1,172 @@
+/* =============================================
+   FORMULÁRIO
+   Rótulos, campos de entrada, seleção, tabela e blocos condicionais.
+============================================= */
+label {
+  display: inline-block;
+  margin-bottom: 8px;
+  font-weight: bold;
+  color: #1a2f45;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="date"] {
+  padding: 10px 14px;
+  border: 1px solid #cccccc;
+  border-radius: 5px;
+  font-size: 15px;
+  background-color: #fafafa;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.campo input[type="text"],
+.campo input[type="email"],
+.campo input[type="date"] {
+  width: 100%;
+}
+
+.campo-inline input[type="text"] {
+  width: auto;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="date"]:focus {
+  border-color: #1a2f45;
+  box-shadow: 0 0 0 3px rgba(26, 47, 69, 0.1);
+  outline: none;
+  background-color: #ffffff;
+}
+
+/* Campos preenchidos pelo sistema, e não pelo usuário */
+input[readonly] {
+  background-color: #eef1f5;
+  color: #555555;
+  cursor: not-allowed;
+}
+
+/* Campo reprovado na validação */
+input.invalido {
+  border-color: #e74c3c;
+  background-color: #fdf3f2;
+}
+
+select {
+  padding: 10px 14px;
+  border: 1px solid #cccccc;
+  border-radius: 5px;
+  font-size: 15px;
+  background-color: #fafafa;
+  cursor: pointer;
+  width: 100%;
+  transition: border-color 0.3s;
+}
+
+select:focus {
+  border-color: #1a2f45;
+  outline: none;
+}
+
+select:disabled {
+  background-color: #eef1f5;
+  cursor: not-allowed;
+}
+
+table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+}
+
+td {
+  padding: 15px 20px;
+  vertical-align: top;
+  border-right: 1px solid #e0e0e0;
+  width: 33.33%;
+}
+
+td:last-child {
+  border-right: none;
+}
+
+td > b,
+td > strong {
+  display: block;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: #1a2f45;
+  margin-bottom: 12px;
+}
+
+input[type="radio"],
+input[type="checkbox"] {
+  margin-right: 8px;
+  cursor: pointer;
+  accent-color: #1a2f45;
+  width: 15px;
+  height: 15px;
+}
+
+td label {
+  text-transform: none;
+  letter-spacing: 0;
+  font-weight: normal;
+  font-size: 15px;
+  display: inline;
+  margin-bottom: 0;
+}
+
+td br + input {
+  margin-top: 8px;
+}
+
+/* =============================================
+   BLOCOS CONDICIONAIS
+   Aparecem só quando a regra de negócio pede.
+============================================= */
+.bloco-condicional {
+  margin-top: 16px;
+  padding: 14px 16px;
+  border: 2px dashed #1a2f45;
+  border-radius: 6px;
+  background-color: #f4f7fb;
+}
+
+.bloco-condicional strong {
+  margin-bottom: 10px;
+}
+
+.bloco-condicional label {
+  display: inline;
+  text-transform: none;
+  font-weight: normal;
+  letter-spacing: 0;
+  font-size: 15px;
+}
+
+.bloco-condicional input[type="text"] {
+  width: 100%;
+  margin-top: 6px;
+}
+
+/* O atributo hidden precisa vencer o display do bloco */
+[hidden] { display: none !important; }
+
+/* =============================================
+   MENSAGENS
+============================================= */
+.mensagem-erro,
+.mensagem-status {
+  font-size: 13px;
+  margin-top: 6px;
+  min-height: 18px;
+}
+
+.mensagem-erro { color: #e74c3c; }
+.mensagem-status { color: #1a2f45; }
+.mensagem-status.erro { color: #e74c3c; }

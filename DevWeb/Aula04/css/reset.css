@@ -1,0 +1,9 @@
+/* =============================================
+   RESET BÁSICO
+   Zera as diferenças de espaçamento entre navegadores.
+============================================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}

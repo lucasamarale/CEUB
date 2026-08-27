@@ -1,0 +1,64 @@
+/* =============================================
+   BOTÕES
+============================================= */
+.botoes {
+  display: flex;
+  gap: 15px;
+  margin-top: 10px;
+}
+
+input[type="submit"] {
+  background-color: #27ae60;
+  color: #ffffff;
+  border: none;
+  padding: 12px 35px;
+  border-radius: 5px;
+  font-size: 15px;
+  font-weight: bold;
+  cursor: pointer;
+  letter-spacing: 0.5px;
+  transition: background-color 0.3s, transform 0.1s;
+}
+
+input[type="submit"]:hover:not(:disabled) {
+  background-color: #1e8449;
+}
+
+input[type="submit"]:active:not(:disabled) {
+  transform: scale(0.98);
+}
+
+/* Estado desabilitado: o botão precisa parecer desabilitado, e não só estar */
+input[type="submit"]:disabled {
+  background-color: #b8c4ce;
+  cursor: not-allowed;
+}
+
+input[type="reset"] {
+  background-color: #ffffff;
+  color: #e74c3c;
+  border: 2px solid #e74c3c;
+  padding: 12px 35px;
+  border-radius: 5px;
+  font-size: 15px;
+  font-weight: bold;
+  cursor: pointer;
+  letter-spacing: 0.5px;
+  transition: background-color 0.3s, color 0.3s, transform 0.1s;
+}
+
+input[type="reset"]:hover {
+  background-color: #e74c3c;
+  color: #ffffff;
+}
+
+input[type="reset"]:active {
+  transform: scale(0.98);
+}
+
+.aviso-envio {
+  margin-top: 18px;
+  font-size: 14px;
+  color: #1e8449;
+  min-height: 20px;
+}

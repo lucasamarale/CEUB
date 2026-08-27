@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Escola Virtual</title>
+
+  <!-- Desafio: separar e importar os arquivos CSS.
+       O <style> do esqueleto foi quebrado em quatro folhas por responsabilidade. -->
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/formulario.css">
+  <link rel="stylesheet" href="css/botoes.css">
+
+  <!-- defer garante que o DOM já existe quando os scripts rodam,
+       sem precisar de DOMContentLoaded em cada arquivo. -->
+  <script src="js/mascaras.js" defer></script>
+  <script src="js/idade.js" defer></script>
+  <script src="js/endereco.js" defer></script>
+  <script src="js/matricula.js" defer></script>
+  <script src="js/validacao.js" defer></script>
+</head>
+<body>
+
+  <h1>Escola Virtual</h1>
+  <h2>Formulário de Pré-Matrícula</h2>
+
+  <form action="" method="post" id="form-matricula" novalidate>
+
+    <fieldset>
+      <legend><strong>Dados Pessoais</strong></legend>
+
+      <div class="campo-grupo">
+        <div class="campo">
+          <label for="nome_aluno">Nome do Aluno</label>
+          <input type="text" id="nome_aluno" name="nome_aluno" required>
+        </div>
+        <div class="campo">
+          <label for="email">E-Mail</label>
+          <input type="email" id="email" name="email">
+        </div>
+      </div>
+
+      <div class="campo-grupo">
+        <div class="campo">
+          <label for="nome_mae">Nome da Mãe</label>
+          <input type="text" id="nome_mae" name="nome_mae">
+        </div>
+        <div class="campo">
+          <label for="nome_pai">Nome do Pai</label>
+          <input type="text" id="nome_pai" name="nome_pai">
+        </div>
+      </div>
+
+      <div class="campo-grupo">
+        <div class="campo">
+          <label for="nascimento">Nascimento</label>
+          <input type="date" id="nascimento" name="nascimento">
+        </div>
+        <div class="campo">
+          <label for="telefone">Telefone</label>
+          <input type="text" id="telefone" name="telefone" maxlength="16"
+                 placeholder="(61) 9 9999-9999" inputmode="numeric">
+        </div>
+      </div>
+
+      <!-- Desafio: novos campos CPF e CEP, ambos com máscara. -->
+      <div class="campo-grupo">
+        <div class="campo">
+          <label for="cpf">CPF</label>
+          <input type="text" id="cpf" name="cpf" maxlength="14"
+                 placeholder="000.000.000-00" inputmode="numeric"
+                 aria-describedby="cpf-erro">
+          <span class="mensagem-erro" id="cpf-erro" role="alert"></span>
+        </div>
+        <div class="campo">
+          <label for="cep">CEP</label>
+          <input type="text" id="cep" name="cep" maxlength="9"
+                 placeholder="00000-000" inputmode="numeric"
+                 aria-describedby="cep-status">
+          <span class="mensagem-status" id="cep-status" role="status"></span>
+        </div>
+      </div>
+
+      <!-- Desafio: matrícula e idade. A idade é calculada, não digitada. -->
+      <div class="campo-grupo">
+        <div class="campo">
+          <label for="matricula">Matrícula</label>
+          <input type="text" id="matricula" name="matricula" maxlength="14"
+                 placeholder="000.000.000-00" inputmode="numeric">
+        </div>
+        <div class="campo">
+          <label for="idade">Idade</label>
+          <input type="text" id="idade" name="idade" placeholder="45 anos" readonly>
+        </div>
+      </div>
+
+    </fieldset>
+
+    <!-- Desafio: criar o novo fieldset de Endereço.
+         Os IDs seguem exatamente os nomes pedidos no slide. -->
+    <fieldset>
+      <legend><strong>Endereço</strong></legend>
+
+      <div class="campo-grupo">
+        <div class="campo">
+          <label for="logradouro">Logradouro</label>
+          <input type="text" id="logradouro" name="logradouro">
+        </div>
+        <div class="campo">
+          <label for="numero">Número</label>
+          <input type="text" id="numero" name="numero" placeholder="Ex: 123">
+        </div>
+      </div>
+
+      <div class="campo-grupo">
+        <div class="campo">
+          <label for="complemento">Complemento</label>
+          <input type="text" id="complemento" name="complemento" placeholder="Apto, Bloco...">
+        </div>
+        <div class="campo">
+          <label for="bairro">Bairro</label>
+          <input type="text" id="bairro" name="bairro">
+        </div>
+      </div>
+
+      <div class="campo-grupo campo-grupo-tres">
+        <div class="campo">
+          <label for="estado">Estado</label>
+          <select id="estado" name="estado">
+            <option value="">Selecione o estado</option>
+          </select>
+        </div>
+        <div class="campo">
+          <label for="cidade">Cidade</label>
+          <select id="cidade" name="cidade" disabled>
+            <option value="">Selecione primeiro o estado</option>
+          </select>
+        </div>
+        <div class="campo">
+          <label for="ibge">Código IBGE</label>
+          <input type="text" id="ibge" name="ibge" readonly>
+        </div>
+      </div>
+
+    </fieldset>
+
+    <fieldset>
+      <legend><strong>Informações de Matrícula</strong></legend>
+
+      <table>
+        <tr valign="top">
+          <td>
+            <strong>Série</strong>
+            <select id="serie" name="serie">
+              <option value="">-- Selecione --</option>
+              <option value="pre-escolar">Pré-escolar</option>
+              <option value="1ano">1º ano</option>
+              <option value="2ano">2º ano</option>
+              <option value="3ano">3º ano</option>
+              <option value="4ano">4º ano</option>
+              <option value="5ano">5º ano</option>
+            </select>
+
+            <!-- Desafio: segunda língua, exibida apenas para o 5º ano. -->
+            <div class="bloco-condicional" id="bloco-segunda-lingua" hidden>
+              <strong>Segunda Língua</strong>
+              <input type="radio" name="segunda_lingua" id="ingles" value="ingles">
+              <label for="ingles">Inglês</label><br>
+              <input type="radio" name="segunda_lingua" id="espanhol" value="espanhol">
+              <label for="espanhol">Espanhol</label>
+            </div>
+          </td>
+
+          <td>
+            <strong>Turno</strong>
+            <input type="radio" name="turno" id="manha" value="manha">
+            <label for="manha">Manhã</label><br>
+            <input type="radio" name="turno" id="tarde" value="tarde">
+            <label for="tarde">Tarde</label>
+
+            <!-- Desafio: turno da tarde abre o telefone do responsável. -->
+            <div class="bloco-condicional" id="bloco-responsavel" hidden>
+              <label for="telefone_responsavel">Telefone do Responsável</label>
+              <input type="text" id="telefone_responsavel" name="telefone_responsavel"
+                     maxlength="16" placeholder="(61) 9 9999-9999" inputmode="numeric">
+            </div>
+          </td>
+
+          <td>
+            <strong>Atividades Extracurriculares</strong>
+            <input type="checkbox" name="atividades" id="informatica" value="informatica">
+            <label for="informatica">Informática</label><br>
+
+            <input type="checkbox" name="atividades" id="musica" value="musica">
+            <label for="musica">Música</label><br>
+
+            <input type="checkbox" name="atividades" id="balet" value="balet">
+            <label for="balet">Balet</label><br>
+
+            <input type="checkbox" name="atividades" id="pintura" value="pintura">
+            <label for="pintura">Pintura</label><br>
+
+            <input type="checkbox" name="atividades" id="judo" value="judo">
+            <label for="judo">Judô</label><br>
+
+            <input type="checkbox" name="atividades" id="futebol" value="futebol">
+            <label for="futebol">Futebol</label>
+          </td>
+        </tr>
+      </table>
+    </fieldset>
+
+    <div class="botoes">
+      <!-- Desafio: o envio nasce desabilitado e só libera com nome e telefone. -->
+      <input type="submit" id="btn-enviar" value="Enviar Formulário" disabled>
+      <input type="reset" id="btn-limpar" value="Limpar Campos">
+    </div>
+
+    <p class="aviso-envio" id="aviso-envio" role="status"></p>
+
+  </form>
+
+  <noscript>
+    <p class="aviso-envio">Este formulário usa JavaScript para máscaras, busca de CEP e
+    validação. Sem JavaScript os campos continuam funcionando, mas sem essas facilidades.</p>
+  </noscript>
+
+</body>
+</html>

@@ -1,0 +1,94 @@
+/* =============================================
+   LAYOUT
+   Estrutura da página: corpo, cabeçalhos, formulário e fieldsets.
+============================================= */
+body {
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  background-color: #eef1f5;
+  color: #333333;
+  min-height: 100vh;
+}
+
+h1 {
+  background-color: #1a2f45;
+  color: #ffffff;
+  text-align: center;
+  padding: 30px 20px;
+  font-size: 32px;
+  letter-spacing: 3px;
+}
+
+h2 {
+  text-align: center;
+  color: #1a2f45;
+  margin: 40px 0 30px;
+  font-size: 22px;
+  letter-spacing: 1px;
+}
+
+form {
+  width: 90%;
+  max-width: 960px;
+  margin: 0 auto 60px auto;
+  background-color: #ffffff;
+  padding: 50px 60px;
+  border-radius: 10px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+fieldset {
+  border: 2px solid #1a2f45;
+  border-radius: 8px;
+  padding: 30px 35px;
+  margin-bottom: 35px;
+}
+
+legend {
+  background-color: #1a2f45;
+  color: #ffffff;
+  padding: 7px 18px;
+  border-radius: 5px;
+  font-size: 15px;
+  letter-spacing: 1px;
+}
+
+/* Grade de campos, duas colunas por padrão */
+.campo-grupo {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px 40px;
+  margin-bottom: 20px;
+}
+
+/* Variação de três colunas, usada em estado, cidade e IBGE */
+.campo-grupo-tres {
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.campo {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+
+.campo-inline {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+
+.campo-inline label {
+  margin-bottom: 0;
+  white-space: nowrap;
+}
+
+/* Em telas estreitas as grades viram uma coluna só */
+@media (max-width: 720px) {
+  form { padding: 30px 22px; }
+  .campo-grupo,
+  .campo-grupo-tres { grid-template-columns: 1fr; }
+  table, td { display: block; width: 100%; border-right: none; }
+}

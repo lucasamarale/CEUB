@@ -12,7 +12,8 @@ O repositório é organizado por disciplina, e cada disciplina por aula ou entre
 CEUB/
 └── DevWeb/          Desenvolvimento Web, 4º semestre (2026.2)
     ├── Aula01/      Site William Arena
-    └── Aula02/      Formulário de Pré-Matrícula da Escola Virtual
+    ├── Aula02/      Formulário de Pré-Matrícula, somente HTML
+    └── Aula04/      Formulário de Pré-Matrícula com CSS separado e JavaScript
 ```
 
 ## Disciplinas
@@ -29,7 +30,7 @@ build. Basta abrir o `index.html` da pasta no navegador.
 Para servir localmente:
 
 ```bash
-cd DevWeb/Aula01
+cd DevWeb/Aula04
 python3 -m http.server 8000
 ```
 
