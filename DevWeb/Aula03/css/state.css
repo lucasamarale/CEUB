@@ -1,0 +1,100 @@
+/* =============================================================
+   STATE, quarta camada do SMACSS
+   Como os componentes se comportam quando o usuário interage.
+   Pseudo-classes descrevem estado; elas não criam elemento novo,
+   apenas selecionam o que já existe em determinada condição.
+============================================================= */
+
+/* -------------------------------------------------------------
+   Foco
+
+   :focus-visible em vez de :focus. O anel aparece para quem navega
+   pelo teclado e não polui a tela de quem clicou com o mouse.
+------------------------------------------------------------- */
+input:focus-visible,
+select:focus-visible {
+  outline: none;
+  border-color: var(--cor-marca);
+  box-shadow: var(--sombra-foco);
+  background-color: var(--cor-superficie);
+}
+
+/* Contorno visível também nos botões, para não perder o rastro do teclado */
+input[type="submit"]:focus-visible,
+input[type="reset"]:focus-visible {
+  outline: 3px solid var(--cor-marca-clara);
+  outline-offset: 2px;
+}
+
+/* -------------------------------------------------------------
+   Passagem do mouse
+------------------------------------------------------------- */
+input[type="text"]:hover,
+input[type="email"]:hover,
+input[type="date"]:hover,
+select:hover {
+  border-color: var(--cor-marca-clara);
+}
+
+input[type="submit"]:hover { background-color: var(--cor-sucesso-escura); }
+
+input[type="reset"]:hover {
+  background-color: var(--cor-perigo);
+  color: var(--cor-superficie);
+}
+
+/* -------------------------------------------------------------
+   Clique
+
+   Só transform é animado. Animar width ou margin obriga o
+   navegador a recalcular o layout da página inteira e derruba a
+   métrica de estabilidade visual. transform é resolvido pela GPU,
+   sem recálculo.
+------------------------------------------------------------- */
+input[type="submit"]:active,
+input[type="reset"]:active {
+  transform: scale(0.98);
+}
+
+/* -------------------------------------------------------------
+   Validação
+
+   :invalid vale desde o carregamento, e acusar erro num campo que
+   a pessoa ainda nem tocou é hostil. A combinação com :not(:placeholder-shown)
+   e com :user-invalid limita o aviso a quem de fato interagiu.
+------------------------------------------------------------- */
+input:user-invalid {
+  border-color: var(--cor-perigo);
+  background-color: #fdf3f2;
+}
+
+input:user-valid {
+  border-color: var(--cor-sucesso);
+}
+
+/* -------------------------------------------------------------
+   Desabilitado e somente leitura
+------------------------------------------------------------- */
+input:disabled,
+select:disabled,
+input[readonly] {
+  background-color: var(--cor-fundo);
+  color: var(--cor-texto-suave);
+  cursor: not-allowed;
+}
+
+/* -------------------------------------------------------------
+   Texto de exemplo dentro do campo
+------------------------------------------------------------- */
+::placeholder {
+  color: var(--cor-texto-suave);
+  opacity: 1;
+}
+
+/* -------------------------------------------------------------
+   Seleção de texto
+------------------------------------------------------------- */
+::selection {
+  background-color: var(--cor-marca);
+  color: var(--cor-superficie);
+}

@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Escola Virtual, Formulário de Pré-Matrícula</title>
+
+  <!--
+    Método externo, com <link>. É o padrão da indústria: permite cache,
+    organização e escala, e mantém a separação de responsabilidades.
+    A ordem segue as camadas do SMACSS, porque a cascata resolve empate
+    de especificidade pelo que vem depois.
+  -->
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/modules.css">
+  <link rel="stylesheet" href="css/state.css">
+  <link rel="stylesheet" href="css/theme.css">
+</head>
+<body>
+
+    <h1>Escola Virtual</h1>
+    <h2>Formulário de Pré-Matrícula</h2>
+
+    <form action="" method="post">
+
+      <fieldset>
+        <legend><strong>Dados Pessoais</strong></legend>
+
+        <div class="campo-grupo">
+          <div class="campo">
+            <label for="nome_aluno">Nome do Aluno</label>
+            <input type="text" id="nome_aluno" name="nome_aluno" required>
+          </div>
+          <div class="campo">
+            <label for="email">E-Mail</label>
+            <input type="email" id="email" name="email">
+          </div>
+        </div>
+
+        <div class="campo-grupo">
+          <div class="campo">
+            <label for="nome_mae">Nome da Mãe</label>
+            <input type="text" id="nome_mae" name="nome_mae">
+          </div>
+          <div class="campo">
+            <label for="nome_pai">Nome do Pai</label>
+            <input type="text" id="nome_pai" name="nome_pai">
+          </div>
+        </div>
+
+        <div class="campo-grupo">
+          <div class="campo">
+            <label for="nascimento">Nascimento</label>
+            <input type="date" id="nascimento" name="nascimento">
+          </div>
+          <div class="campo">
+            <label for="telefone">Telefone</label>
+            <input type="text" id="telefone" name="telefone" maxlength="15" placeholder="(61) 9 9999-9999">
+          </div>
+        </div>
+
+      </fieldset>
+
+      <fieldset>
+        <legend><strong>Informações de Matrícula</strong></legend>
+
+        <table>
+          <tr valign="top">
+            <td>
+              <strong>Série</strong>
+              <select id="serie" name="serie">
+                <option value="pre-escolar">Pré-escolar</option>
+                <option value="1ano">1º ano</option>
+                <option value="2ano">2º ano</option>
+                <option value="3ano">3º ano</option>
+                <option value="4ano">4º ano</option>
+                <option value="5ano">5º ano</option>
+              </select>
+            </td>
+
+            <td>
+              <strong>Turno</strong>
+              <input type="radio" name="turno" id="manha" value="manha">
+              <label for="manha">Manhã</label><br>
+              <input type="radio" name="turno" id="tarde" value="tarde">
+              <label for="tarde">Tarde</label>
+            </td>
+
+            <td>
+              <strong>Atividades Extracurriculares</strong>
+              <input type="checkbox" name="atividades" id="informatica" value="informatica">
+              <label for="informatica">Informática</label><br>
+
+              <input type="checkbox" name="atividades" id="musica" value="musica">
+              <label for="musica">Música</label><br>
+
+              <input type="checkbox" name="atividades" id="balet" value="balet">
+              <label for="balet">Balet</label><br>
+
+              <input type="checkbox" name="atividades" id="pintura" value="pintura">
+              <label for="pintura">Pintura</label><br>
+
+              <input type="checkbox" name="atividades" id="judo" value="judo">
+              <label for="judo">Judô</label><br>
+
+              <input type="checkbox" name="atividades" id="futebol" value="futebol">
+              <label for="futebol">Futebol</label>
+            </td>
+          </tr>
+        </table>
+      </fieldset>
+
+      <div class="botoes">
+        <input type="submit" value="Enviar Formulário">
+        <input type="reset" value="Limpar Campos">
+      </div>
+
+    </form>
+
+  </body>
+</html>

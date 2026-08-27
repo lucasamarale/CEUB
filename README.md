@@ -13,7 +13,8 @@ CEUB/
 └── DevWeb/          Desenvolvimento Web, 4º semestre (2026.2)
     ├── Aula01/      Site William Arena
     ├── Aula02/      Formulário de Pré-Matrícula, somente HTML
-    └── Aula04/      Formulário de Pré-Matrícula com CSS separado e JavaScript
+    ├── Aula03/      O mesmo formulário, com CSS externo em camadas
+    └── Aula04/      O mesmo formulário, com JavaScript
 ```
 
 ## Disciplinas
@@ -30,7 +31,7 @@ build. Basta abrir o `index.html` da pasta no navegador.
 Para servir localmente:
 
 ```bash
-cd DevWeb/Aula04
+cd DevWeb/Aula03
 python3 -m http.server 8000
 ```
 

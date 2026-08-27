@@ -1,0 +1,152 @@
+/* =============================================================
+   MODULES, terceira camada do SMACSS
+   Os componentes reutilizáveis: campo, rótulo, entrada, seleção,
+   tabela de matrícula e botões. É a camada que mais cresce num
+   projeto real, e por isso a que mais precisa de nome previsível.
+============================================================= */
+
+/* -------------------------------------------------------------
+   Campo, o par rótulo mais entrada
+------------------------------------------------------------- */
+.campo {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: var(--espaco-3);
+}
+
+label {
+  display: inline-block;
+  margin-bottom: var(--espaco-1);
+  font-weight: bold;
+  font-size: var(--texto-pequeno);
+  color: var(--cor-marca);
+  text-transform: uppercase;
+  letter-spacing: 0.03125rem;
+}
+
+/*
+  Pseudo-elemento. Marca com asterisco o rótulo de todo campo
+  obrigatório, sem precisar escrever isso no HTML. O conteúdo é
+  gerado pelo CSS e não existe no documento original.
+*/
+.campo:has(input:required) label::after {
+  content: " *";
+  color: var(--cor-perigo);
+  font-weight: bold;
+}
+
+/* -------------------------------------------------------------
+   Entradas de texto
+
+   Agrupamento por vírgula em vez de uma regra para cada tipo.
+   O padding usa em, e não rem, para acompanhar a fonte do próprio
+   campo caso ela mude.
+------------------------------------------------------------- */
+input[type="text"],
+input[type="email"],
+input[type="date"],
+select {
+  width: 100%;
+  padding: 0.625em 0.875em;
+  border: var(--borda-fina);
+  border-radius: var(--raio);
+  background-color: var(--cor-campo);
+  color: var(--cor-texto);
+  transition: border-color var(--transicao), box-shadow var(--transicao);
+}
+
+select { cursor: pointer; }
+
+/* Reduzindo o escopo com tipo mais classe: só o telefone dentro de um campo */
+.campo input#telefone { letter-spacing: 0.03125rem; }
+
+/* -------------------------------------------------------------
+   Tabela de matrícula
+------------------------------------------------------------- */
+table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+}
+
+td {
+  width: 33.33%;
+  padding: var(--espaco-2) var(--espaco-3);
+  vertical-align: top;
+  border-right: var(--borda-fina);
+}
+
+td:last-child { border-right: none; }
+
+/* Encadeamento de seletores: strong que é filho direto de td */
+td > strong {
+  display: block;
+  margin-bottom: var(--espaco-2);
+  font-size: var(--texto-pequeno);
+  color: var(--cor-marca);
+  text-transform: uppercase;
+  letter-spacing: 0.03125rem;
+}
+
+/* -------------------------------------------------------------
+   Rádios e caixas de seleção
+------------------------------------------------------------- */
+input[type="radio"],
+input[type="checkbox"] {
+  width: 0.9375rem;
+  height: 0.9375rem;
+  margin-right: var(--espaco-1);
+  accent-color: var(--cor-marca);
+  cursor: pointer;
+}
+
+/*
+  Rótulo dentro da tabela não é título de campo, é texto de opção.
+  Restringir a regra a td evita afetar os rótulos do resto da
+  página, que continuam em caixa alta.
+*/
+td label {
+  display: inline;
+  margin-bottom: 0;
+  font-weight: normal;
+  font-size: var(--texto-normal);
+  color: var(--cor-texto);
+  text-transform: none;
+  letter-spacing: 0;
+  cursor: pointer;
+}
+
+td br + input { margin-top: var(--espaco-1); }
+
+/* -------------------------------------------------------------
+   Botões
+------------------------------------------------------------- */
+.botoes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--espaco-2);
+  margin-top: var(--espaco-1);
+}
+
+input[type="submit"],
+input[type="reset"] {
+  padding: 0.75em 2.1875em;
+  border-radius: var(--raio);
+  font-weight: bold;
+  letter-spacing: 0.03125rem;
+  cursor: pointer;
+  transition: background-color var(--transicao), color var(--transicao),
+              transform var(--transicao);
+}
+
+input[type="submit"] {
+  border: none;
+  background-color: var(--cor-sucesso);
+  color: var(--cor-superficie);
+}
+
+input[type="reset"] {
+  border: 2px solid var(--cor-perigo);
+  background-color: var(--cor-superficie);
+  color: var(--cor-perigo);
+}

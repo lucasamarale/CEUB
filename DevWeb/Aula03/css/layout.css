@@ -1,0 +1,129 @@
+/* =============================================================
+   LAYOUT, segunda camada do SMACSS
+   As áreas estruturais grandes: cabeçalho, formulário, fieldsets
+   e a grade que organiza os campos. Nada de componente aqui.
+============================================================= */
+
+/* -------------------------------------------------------------
+   Cabeçalho da página
+------------------------------------------------------------- */
+h1 {
+  background-color: var(--cor-marca);
+  color: var(--cor-superficie);
+  text-align: center;
+  padding: var(--espaco-4) var(--espaco-3);
+}
+
+h2 {
+  text-align: center;
+  color: var(--cor-marca);
+  margin: var(--espaco-5) 0 var(--espaco-4);
+}
+
+/* -------------------------------------------------------------
+   O cartão do formulário
+
+   Box model na prática: max-width limita a largura de leitura,
+   margin auto nas laterais centraliza, padding cria o respiro
+   interno e box-shadow descola o cartão do fundo.
+------------------------------------------------------------- */
+form {
+  width: 90%;
+  max-width: 60rem;
+  margin: 0 auto var(--espaco-5);
+  background-color: var(--cor-superficie);
+  padding: var(--espaco-5) var(--espaco-4);
+  border-radius: var(--raio-grande);
+  box-shadow: var(--sombra-cartao);
+}
+
+/* -------------------------------------------------------------
+   Fieldsets
+
+   Cada fieldset é declarado como contêiner de consulta. É ele que
+   as .campo-grupo vão medir mais adiante, e não a largura da tela.
+   Um elemento não pode medir a si mesmo, por isso quem vira
+   contêiner é o pai, e quem responde é o filho.
+------------------------------------------------------------- */
+fieldset {
+  border: var(--borda-forte);
+  border-radius: 0.5rem;
+  padding: var(--espaco-4) var(--espaco-3);
+  margin-bottom: var(--espaco-4);
+
+  container-type: inline-size;
+  container-name: secao;
+}
+
+legend {
+  background-color: var(--cor-marca);
+  color: var(--cor-superficie);
+  padding: 0.4375rem 1.125rem;
+  border-radius: var(--raio);
+  font-size: var(--texto-pequeno);
+  letter-spacing: 0.0625rem;
+}
+
+/* -------------------------------------------------------------
+   Grade de campos
+
+   Duas colunas de largura igual, com espaçamento diferente entre
+   linhas e colunas.
+------------------------------------------------------------- */
+.campo-grupo {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--espaco-3) var(--espaco-4);
+  margin-bottom: var(--espaco-3);
+}
+
+/* -------------------------------------------------------------
+   Container query: a grade responde à largura do fieldset
+
+   O componente não pergunta qual é a largura da tela, e sim
+   quanto espaço o pai tem. Isso o torna portátil: se um dia este
+   formulário for colocado dentro de uma barra lateral estreita
+   numa tela grande, ele empilha do mesmo jeito, sem nenhuma
+   media query saber disso.
+------------------------------------------------------------- */
+@container secao (max-width: 34rem) {
+  .campo-grupo {
+    grid-template-columns: 1fr;
+    gap: var(--espaco-2);
+  }
+}
+
+/* -------------------------------------------------------------
+   Media query: o macro layout responde à tela
+
+   Media para o layout da página, container para o micro layout do
+   componente. Aqui a mudança é da página inteira, então media é a
+   ferramenta certa.
+------------------------------------------------------------- */
+@media (max-width: 45rem) {
+  form {
+    width: 94%;
+    padding: var(--espaco-4) var(--espaco-3);
+  }
+
+  h1 { font-size: 1.5rem; }
+  h2 { margin: var(--espaco-4) 0 var(--espaco-3); }
+
+  /* A tabela de matrícula deixa de ser tabela e vira empilhamento */
+  table,
+  tbody,
+  tr,
+  td {
+    display: block;
+    width: 100%;
+  }
+
+  td {
+    border-right: none;
+    border-bottom: var(--borda-fina);
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  td:last-child { border-bottom: none; }
+}

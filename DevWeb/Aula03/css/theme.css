@@ -1,0 +1,86 @@
+/* =============================================================
+   THEME, quinta camada do SMACSS
+   A pele visual. Como todas as cores vivem em variáveis, trocar o
+   tema é redefinir tokens, e não reescrever componente.
+
+   Custom properties são resolvidas no valor computado, e não na
+   ordem de leitura do arquivo. Por isso um token redefinido aqui,
+   no último arquivo carregado, ainda alcança regras escritas lá
+   no base.css.
+============================================================= */
+
+/* -------------------------------------------------------------
+   Detalhe de marca no cabeçalho, com pseudo-elemento
+
+   A faixa não existe no HTML. Ela é gerada pelo CSS, o que evita
+   sujar a marcação com uma div puramente decorativa.
+------------------------------------------------------------- */
+h1 {
+  position: relative;
+  overflow: hidden;
+}
+
+h1::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 0.25rem;
+  background: linear-gradient(90deg, var(--cor-marca-clara), var(--cor-sucesso));
+}
+
+/* -------------------------------------------------------------
+   Preferência de contraste do sistema
+------------------------------------------------------------- */
+@media (prefers-contrast: more) {
+  :root {
+    --cor-borda: #6b7a89;
+    --cor-texto-suave: #4a5866;
+  }
+}
+
+/* -------------------------------------------------------------
+   Preferência por menos movimento
+
+   Quem marcou essa opção no sistema costuma ter motivo de saúde.
+   Respeitar não é enfeite de acessibilidade, é requisito.
+------------------------------------------------------------- */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/*
+  Estes são os únicos !important do projeto, e o motivo é
+  justamente o que o slide da cascata alerta: ele quebra a
+  especificidade natural. Aqui isso é desejado, porque a
+  preferência do usuário precisa vencer qualquer regra de
+  componente, sem exceção.
+*/
+
+/* -------------------------------------------------------------
+   Impressão
+------------------------------------------------------------- */
+@media print {
+  :root {
+    --cor-fundo: #ffffff;
+    --sombra-cartao: none;
+  }
+
+  body { background: #ffffff; }
+
+  form {
+    width: 100%;
+    max-width: none;
+    box-shadow: none;
+    padding: 0;
+  }
+
+  .botoes { display: none; }
+}

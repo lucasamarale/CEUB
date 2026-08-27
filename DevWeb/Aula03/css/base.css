@@ -1,0 +1,113 @@
+/* =============================================================
+   BASE, primeira camada do SMACSS
+   Reset do navegador, tokens de projeto e tipografia padrão.
+   Nada aqui depende de classe: são os estilos que valem para o
+   documento inteiro antes de qualquer componente existir.
+============================================================= */
+
+/* -------------------------------------------------------------
+   Seletor universal. Zera as margens que cada navegador aplica
+   por conta própria, para que o ponto de partida seja o mesmo em
+   todos eles.
+------------------------------------------------------------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/*
+  box-sizing: border-box muda a conta do box model. No padrão
+  content-box, width define só o conteúdo, e padding e border são
+  somados por fora: um campo com width 100% e padding 14px vaza do
+  pai. Com border-box, width passa a incluir padding e border, que
+  é o comportamento que quase sempre se espera.
+*/
+
+/* -------------------------------------------------------------
+   Tokens do projeto.
+   Declarados em :root, que é o próprio elemento html, ficam
+   visíveis para o documento inteiro. Mudar a cor da marca em um
+   lugar só passa a valer em todas as camadas.
+------------------------------------------------------------- */
+:root {
+  /* Cores */
+  --cor-marca: #1a2f45;
+  --cor-marca-clara: #2c4c6e;
+  --cor-fundo: #eef1f5;
+  --cor-superficie: #ffffff;
+  --cor-campo: #fafafa;
+  --cor-borda: #cccccc;
+  --cor-texto: #333333;
+  --cor-texto-suave: #6b7a89;
+  --cor-sucesso: #27ae60;
+  --cor-sucesso-escura: #1e8449;
+  --cor-perigo: #e74c3c;
+
+  /* Escala de espaçamento, em rem para acompanhar a fonte do usuário */
+  --espaco-1: 0.5rem;
+  --espaco-2: 0.75rem;
+  --espaco-3: 1.25rem;
+  --espaco-4: 2rem;
+  --espaco-5: 3rem;
+
+  /* Tipografia */
+  --fonte-base: Arial, Helvetica, sans-serif;
+  --texto-pequeno: 0.875rem;
+  --texto-normal: 1rem;
+  --texto-medio: 1.375rem;
+  --texto-grande: 2rem;
+
+  /* Bordas e sombras */
+  --raio: 0.3125rem;
+  --raio-grande: 0.625rem;
+  --borda-fina: 1px solid var(--cor-borda);
+  --borda-forte: 2px solid var(--cor-marca);
+  --sombra-cartao: 0 4px 20px rgba(0, 0, 0, 0.08);
+  --sombra-foco: 0 0 0 3px rgba(26, 47, 69, 0.15);
+
+  /* Movimento */
+  --transicao: 0.25s ease;
+}
+
+/* -------------------------------------------------------------
+   Unidades. A raiz fica em 100%, e não em pixel fixo, para
+   respeitar quem aumentou a fonte padrão do navegador. Todo o
+   resto do projeto usa rem, que é relativo a esta raiz, e em nos
+   espaçamentos internos que devem acompanhar a fonte do próprio
+   elemento. Pixel só onde a medida é física de verdade, como a
+   espessura de uma borda.
+------------------------------------------------------------- */
+html {
+  font-size: 100%;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--fonte-base);
+  font-size: var(--texto-normal);
+  line-height: 1.5;
+  color: var(--cor-texto);
+  background-color: var(--cor-fundo);
+  min-height: 100vh;
+}
+
+/* Seletores de tipo definem a base visual do documento */
+h1 {
+  font-size: var(--texto-grande);
+  letter-spacing: 0.1875rem;
+}
+
+h2 {
+  font-size: var(--texto-medio);
+  letter-spacing: 0.0625rem;
+}
+
+/* Agrupamento por vírgula, para não repetir a mesma declaração */
+input,
+select,
+button,
+textarea {
+  font-family: inherit;
+  font-size: var(--texto-normal);
+}
