@@ -1,0 +1,14 @@
+.acoes { display: flex; gap: 0.5rem; flex-wrap: wrap; }
+
+.botao {
+  border: 1px solid #1a2f45;
+  background: #ffffff;
+  color: #1a2f45;
+  border-radius: 6px;
+  padding: 0.5rem 1rem;
+  font-size: 0.95rem;
+  cursor: pointer;
+}
+
+.botao:hover { background: #1a2f45; color: #ffffff; }
+.botao:focus-visible { outline: 3px solid #8fb3d9; outline-offset: 2px; }

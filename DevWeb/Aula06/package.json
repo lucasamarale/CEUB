@@ -1,0 +1,30 @@
+{
+  "name": "projeto-react",
+  "version": "1.0.0",
+  "description": "React do zero, sem create-react-app: Babel traduz o JSX e o Browserify empacota",
+  "main": "js/source/app.js",
+  "scripts": {
+    "build:js": "babel js/source -d js/build && browserify js/build/app.js -o bundle.js",
+    "build:css": "cat css/*/*.css css/*.css > bundle.css",
+    "build": "npm run build:js && npm run build:css"
+  },
+  "author": "Lucas Amaral Evangelista",
+  "license": "MIT",
+  "dependencies": {
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  },
+  "private": true,
+  "babel": {
+    "presets": [
+      "react",
+      "es2015"
+    ]
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-react": "^6.24.1",
+    "browserify": "^17.0.1"
+  }
+}
