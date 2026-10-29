@@ -10,10 +10,13 @@ Disciplina do 4º semestre (2026.2), turma UN 0726. Prof. William Ribeiro.
 | [`Aula02/`](Aula02) | Escola Virtual, só HTML | Formulário de pré-matrícula montado somente com HTML, sem CSS e sem atributo `style` |
 | [`Aula03/`](Aula03) | Escola Virtual, revisão de CSS | O mesmo formulário com folha de estilo externa em cinco camadas SMACSS, box model, container queries e cascata |
 | [`Aula04/`](Aula04) | Escola Virtual, revisão de JS | Máscaras, campos condicionais, busca de CEP pelo ViaCEP e validação de envio |
+| [`Aula05/`](Aula05) | Inscrição / Contato em Bootstrap | Exercício da aula de Responsividade e Templates: o formulário do slide montado só com a grade, os componentes e a validação do Bootstrap |
+| [`Aula06/`](Aula06) | React do zero | O passo a passo da aula de React: JSX traduzido pelo Babel, empacotado pelo Browserify e scripts de build no `package.json` |
 
-Todos os projetos usam HTML, CSS e JavaScript puros, sem frameworks, sem dependências
-externas e sem etapa de build. Abrir o `index.html` da pasta no navegador é suficiente
-para rodar.
+Das aulas 01 a 04, os projetos usam HTML, CSS e JavaScript puros, sem frameworks, sem
+dependências externas e sem etapa de build. A partir da Aula05 entram as ferramentas: o
+Bootstrap pelo CDN na Aula05, e o React com Babel e Browserify na Aula06. Nas duas, abrir o
+`index.html` continua sendo suficiente, porque o bundle da Aula06 já vai gerado.
 
 A Aula04 consulta as APIs públicas do ViaCEP e do IBGE, então os campos de endereço
 precisam de conexão. O restante funciona offline.

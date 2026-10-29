@@ -14,7 +14,9 @@ CEUB/
     ├── Aula01/      Site William Arena
     ├── Aula02/      Formulário de Pré-Matrícula, somente HTML
     ├── Aula03/      O mesmo formulário, com CSS externo em camadas
-    └── Aula04/      O mesmo formulário, com JavaScript
+    ├── Aula04/      O mesmo formulário, com JavaScript
+    ├── Aula05/      Inscrição / Contato em Bootstrap
+    └── Aula06/      React do zero, com Babel e Browserify
 ```
 
 ## Disciplinas
@@ -25,8 +27,9 @@ CEUB/
 
 ## Como abrir os projetos
 
-Os projetos de `DevWeb/` são HTML, CSS e JavaScript puros, sem dependências e sem
-build. Basta abrir o `index.html` da pasta no navegador.
+Basta abrir o `index.html` da pasta no navegador. A Aula05 carrega o Bootstrap pela
+internet, e a Aula06 já traz o `bundle.js` gerado; para gerar de novo, `npm install` e
+`npm run build` dentro da pasta.
 
 Para servir localmente:
 
